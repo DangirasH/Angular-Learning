@@ -1,0 +1,8 @@
+<p>user-profile works!</p>
+<div>
+    <img [src]="user.photo">
+    <h2>{{ user.firstName }} {{ user.name }}</h2>
+    <p>Age: {{ user.age }}</p>
+    <p>Quote: <input [value]="user.quote"></p>
+    <button (click)="submit()">Submit</button>
+  </div>
