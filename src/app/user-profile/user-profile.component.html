@@ -1,8 +1,21 @@
-<p>user-profile works!</p>
-<div>
-    <img [src]="user.photo">
-    <h2>{{ user.firstName }} {{ user.name }}</h2>
-    <p>Age: {{ user.age }}</p>
-    <p>Quote: <input [value]="user.quote"></p>
-    <button (click)="submit()">Submit</button>
+<div class="flex justify-center align-middle">
+  <div class="m-4 border border-black shadow-2xl flex flex-col">
+    <img class="w-96" [src]="user.photo" />
+    <p class="font-medium text-xl px-4 pt-4">Nom: {{ user.firstName }}</p>
+    <p class="font-medium text-xl px-4 pb-4">Prénom: {{ user.name }}</p>
+    <p class="font-light text-xl my-4 px-4">{{ user.quote }}</p>
+    <input
+      class="font-light border border-slate-500 rounded-sm w-3/4 self-center px-1"
+      id="quote"
+      [(ngModel)]="user.quote"
+      placeholder="quote"
+    />
+    <p *ngIf="show" class="font-light text-xl my-4 px-4 mb-4">{{ user.age }}</p>
+    <button
+      class="border border-slate-600 bg-slate-400 w-1/4 self-center my-4 rounded-md"
+      (click)="hideQuote()"
+    >
+      {{ buttonName }}
+    </button>
   </div>
+</div>
